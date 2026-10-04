@@ -1,1 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Kuntz Kreationz | Beauty. Style. Convenience.</title>
+
+  <style>
+    :root {
+      --purple: #6f3fa3;
+      --deep-purple: #3f235e;
+      --gold: #d5aa52;
+      --black: #171717;
+      --cream: #fffaf3;
+      --white: #ffffff;
+      --soft-purple: #f1e8f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px;
+      background:
+        linear-gradient(
+          rgba(23, 23, 23, 0.78),
+          rgba(63, 35, 94, 0.84)
+        ),
+        var(--deep-purple);
+      color: var(--white);
+    }
+
+    .hero-inner {
+      width: min(760px, 100%);
+      margin: 0 auto;
+    }
+
+    .logo {
+      width: min(320px, 80%);
+      margin: 0 auto 24px;
+      border-radius: 18px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.4rem, 8vw, 4.8rem);
+    }
+
+    .hero-tagline {
+      color: var(--gold);
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #f5eef9;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .button-secondary {
+      background: var(--purple);
+      color: var(--white);
+    }
+
+    /* ---------- ABOUT ---------- */
+
+    .about {
+      padding: 65px 20px;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .section-label {
+      color: var(--purple);
+      font-size: 0.78rem;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 8px 0 16px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--deep-purple);
+    }
+
+    .section-copy {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ---------- SERVICE SECTION ---------- */
+
+    .service {
+      padding: 70px 20px;
+    }
+
+    .service.alt {
+      background: var(--soft-purple);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .flyer-card {
+      background: var(--white);
+      padding: 12px;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    }
+
+    .flyer-card img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .service h2 {
+      margin-top: 0;
+      color: var(--deep-purple);
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .service-list {
+      padding-left: 20px;
+    }
+
+    .service-note {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* ---------- COZY KREATIONS ---------- */
+
+    .shop {
+      padding: 70px 20px;
+      text-align: center;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .shop h2 {
+      color: var(--gold);
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .shop p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      color: #eee;
+    }
+
+    /* ---------- FINAL CTA ---------- */
+
+    .final-cta {
+      padding: 70px 20px;
+      text-align: center;
+      background: var(--purple);
+      color: var(--white);
+    }
+
+    .final-cta h2 {
+      margin-top: 0;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .final-cta p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      padding: 26px 20px;
+      text-align: center;
+      background: #111;
+      color: #ddd;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 760px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-copy {
+        text-align: center;
+      }
+
+      .service-list {
+        display: inline-block;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-inner">
+
+      <img
+        class="logo"
+        src="assets/images/Kuntz-logo.PNG"
+        alt="Kuntz Kreationz"
+      >
+
+      <h1>Kuntz Kreationz</h1>
+
+      <div class="hero-tagline">
+        Beauty. Style. Convenience.
+      </div>
+
+      <p>
+        Mobile retwist services, mobile nail care, and stylish handmade
+        or boutique pieces designed to help you look and feel your best
+        without the hassle.
+      </p>
+
+      <div class="button-row">
+        <a class="button button-primary" href="#retwist">
+          Book Retwist Service
+        </a>
+
+        <a class="button button-secondary" href="#nails">
+          Book Nail Service
+        </a>
+
+        <a class="button button-primary" href="#shop">
+          Shop Cozy Kreations
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about">
+
+    <div class="container">
+
+      <div class="section-label">
+        About Kuntz Kreationz
+      </div>
+
+      <h2 class="section-title">
+        Beauty. Style. Convenience.
+      </h2>
+
+      <p class="section-copy">
+        Kuntz Kreationz brings beauty services and personal style together
+        in one convenient experience. Whether you're booking loc care,
+        scheduling mobile nail services, or shopping unique pieces,
+        every service is designed with confidence, creativity,
+        and convenience in mind.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- RETWIST -->
+  <section class="service" id="retwist">
+
+    <div class="container service-grid">
+
+      <div class="flyer-card">
+        <img
+          src="assets/images/retwist-services.JPEG"
+          alt="Kuntz Kreationz Retwist Services"
+        >
+      </div>
+
+      <div class="service-copy">
+
+        <div class="section-label">
+          Loc Care
+        </div>
+
+        <h2>Mobile Retwist Services</h2>
+
+        <p>
+          Keep your locs fresh, neat, and healthy with professional
+          mobile service that comes to you.
+        </p>
+
+        <ul class="service-list">
+          <li>Basic Retwist</li>
+          <li>Loc Repair</li>
+          <li>2-Strand Twist Styling</li>
+          <li>Mobile service options</li>
+        </ul>
+
+        <p class="service-note">
+          Mobile fees and booking policies may apply based on location
+          and service.
+        </p>
+
+        <a class="button button-secondary" href="#">
+          Book Retwist Service
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- NAILS -->
+  <section class="service alt" id="nails">
+
+    <div class="container service-grid">
+
+      <div class="service-copy">
+
+        <div class="section-label">
+          Nail Care
+        </div>
+
+        <h2>Mobile Nail Services</h2>
+
+        <p>
+          Beautiful nails, your location, your time.
+        </p>
+
+        <p>
+          Kuntz Kreationz offers convenient mobile nail services
+          for clients who want professional care without having
+          to rearrange their day around a salon visit.
+        </p>
+
+        <p>
+          Whether you're at home, at work, preparing for an event,
+          or simply want the convenience of service coming to you,
+          Kuntz Kreationz brings the experience your way.
+        </p>
+
+        <a class="button button-secondary" href="#">
+          Book Nail Service
+        </a>
+
+      </div>
+
+      <div class="flyer-card">
+        <img
+          src="assets/images/nails-services.JPEG"
+          alt="Kuntz Kreationz Nail Services"
+        >
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SHOP -->
+  <section class="shop" id="shop">
+
+    <div class="container">
+
+      <div class="section-label">
+        Style & Accessories
+      </div>
+
+      <h2>Cozy Kreations</h2>
+
+      <p>
+        Explore clothing, accessories, crochet, knit, and other unique
+        pieces designed to add personality, comfort, and creativity
+        to your look.
+      </p>
+
+      <p>
+        Inventory may change, so check back for new Kreations
+        and limited pieces.
+      </p>
+
+      <a class="button button-primary" href="#">
+        Shop Cozy Kreations
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+
+    <div class="container">
+
+      <h2>Ready to Get Started?</h2>
+
+      <p>
+        Choose the experience that fits you. Book your next beauty
+        service or explore the latest styles from Kuntz Kreationz.
+      </p>
+
+      <div class="button-row">
+
+        <a class="button button-primary" href="#retwist">
+          Book Retwist
+        </a>
+
+        <a class="button button-primary" href="#nails">
+          Book Nails
+        </a>
+
+        <a class="button button-primary" href="#shop">
+          Shop Kreations
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="about">
+
+    <div class="container">
+
+      <div class="section-label">
+        Contact
+      </div>
+
+      <h2 class="section-title">
+        Questions Before You Book?
+      </h2>
+
+      <p class="section-copy">
+        Need help choosing a service, confirming your location,
+        or asking about an item? Reach out to Kuntz Kreationz
+        before booking and get the information you need.
+      </p>
+
+      <br>
+
+      <a class="button button-secondary" href="#">
+        Contact Kuntz Kreationz
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    <strong>Kuntz Kreationz</strong><br>
+    Beauty. Style. Convenience.
+  </footer>
+
+</body>
+</html>
