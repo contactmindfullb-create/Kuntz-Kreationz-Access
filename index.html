@@ -193,7 +193,7 @@
       color: #555;
     }
 
-    /* ---------- COZY KREATIONS ---------- */
+    /* ---------- COZY KREATIONZ ---------- */
 
     .shop {
       padding: 70px 20px;
@@ -212,7 +212,96 @@
       margin: 0 auto 28px;
       color: #eee;
     }
+.cozy-carousel-wrapper {
+  max-width: 520px;
+  margin: 28px auto 20px;
+  text-align: center;
+}
 
+.cozy-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cozy-slide-frame {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.cozy-slide-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.cozy-btn {
+  background: #7b46c5;
+  color: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  flex-shrink: 0;
+}
+
+.cozy-btn:hover {
+  background: #6536a8;
+}
+
+.cozy-caption {
+  margin-top: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #d8b04c;
+}
+
+.cozy-dots {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cozy-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+}
+
+.cozy-dot.active {
+  background: #d8b04c;
+}
+
+@media (max-width: 600px) {
+  .cozy-carousel {
+    gap: 8px;
+  }
+
+  .cozy-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .cozy-slide-frame {
+    padding: 10px;
+    border-radius: 18px;
+  }
+}
     /* ---------- FINAL CTA ---------- */
 
     .final-cta {
@@ -297,7 +386,7 @@
         </a>
 
         <a class="button button-primary" href="#shop">
-          Shop Cozy Kreations
+          Shop Cozy Kreationz
         </a>
       </div>
 
@@ -436,21 +525,39 @@
         Style & Accessories
       </div>
 
-      <h2>Cozy Kreations</h2>
+      <h2>Cozy Kreationz</h2>
 
       <p>
         Explore clothing, accessories, crochet, knit, and other unique
         pieces designed to add personality, comfort, and creativity
         to your look.
       </p>
+<div class="cozy-carousel-wrapper">
+  <div class="cozy-carousel">
+    <button class="cozy-btn prev" onclick="changeCozySlide(-1)">&#10094;</button>
 
+    <div class="cozy-slide-frame">
+      <img
+        id="cozyCarouselImage"
+        src="assets/Images/Brownhue-frill-rimhat.JPG"
+        alt="Cozy Kreationz item"
+      />
+    </div>
+
+    <button class="cozy-btn next" onclick="changeCozySlide(1)">&#10095;</button>
+  </div>
+
+  <p id="cozyCarouselCaption" class="cozy-caption">Brownhue Frill Rim Hat</p>
+
+  <div id="cozyDots" class="cozy-dots"></div>
+</div>
       <p>
-        Inventory may change, so check back for new Kreations
+        Inventory may change, so check back for new Kreationz
         and limited pieces.
       </p>
 
       <a class="button button-primary" href="#">
-        Shop Cozy Kreations
+        Shop Cozy Kreationz
       </a>
 
     </div>
@@ -481,7 +588,7 @@
         </a>
 
         <a class="button button-primary" href="#shop">
-          Shop Kreations
+          Shop Kreationz
         </a>
 
       </div>
@@ -525,6 +632,123 @@
     <strong>Kuntz Kreationz</strong><br>
     Beauty. Style. Convenience.
   </footer>
+<script>
+  const cozySlides = [
+    {
+      src: "assets/Images/Brownhue-frill-rimhat.JPG",
+      caption: "Brown Hue Frill Rim Hat"
+    },
+    {
+      src: "assets/Images/Brown-net-hat.JPG",
+      caption: "Brown Net Hat"
+    },
+    {
+      src: "assets/Images/Gold-skully-hat.JPG",
+      caption: "Gold Skully Hat"
+    },
+    {
+      src: "assets/Images/Grey-white-rimhat.JPG",
+      caption: "Grey White Rim Hat"
+    },
+    {
+      src: "assets/Images/Multicolor-frill-rimhat.JPG",
+      caption: "Multicolor Frill Rim Hat"
+    },
+    {
+      src: "assets/Images/Purple-Blk-rimhat.JPG",
+      caption: "Purple Black Rim Hat"
+    },
+    {
+      src: "assets/Images/Tan-skilly-hat.JPG",
+      caption: "Tan Skilly Hat"
+    },
+    {
+      src: "assets/Images/Tan-widerim-skully.JPG",
+      caption: "Tan Wide Rim Skully"
+    },
+    {
+      src: "assets/Images/Violet-Purple-frill-rimhat.JPG",
+      caption: "Violet Purple Frill Rim Hat"
+    },
+    {
+      src: "assets/Images/Trippy-frill-rimhat.JPG",
+      caption: "Trippy Frill Rim Hat"
+    },
+    {
+      src: "assets/Images/Violet-Grey-frill-rimhat.JPG",
+      caption: "Violet Grey Frill Rim Hat"
+    },
+    {
+      src: "assets/Images/Redblkgld-frill-rimhat.JPG",
+      caption: "Red Black Gold Frill Rim Hat"
+    },
+    {
+      src: "assets/Images/Redbee-frill-rimhat.JPG",
+      caption: "Red Bee Frill Rim Hat"
+    },
+    {
+      src: "assets/Images/Colorscale-skully-hat.JPG",
+      caption: "Colorscale Skully Hat"
+    },
+    {
+      src: "assets/Images/AnIslandting-Diabolical-jouvet-shirt.PNG",
+      caption: "An Island Ting Diabolical Jouvet Shirt"
+    },
+    {
+      src: "assets/Images/Fetewhite-Diabolical-jouvet-.PNG",
+      caption: "Fete White Diabolical Jouvet"
+    },
+    {
+      src: "assets/Images/IslandSeason-Diabolical-jouvet-.PNG",
+      caption: "Island Season Diabolical Jouvet"
+    },
+    {
+      src: "assets/Images/Paint-Diabolical-jouvert-shirt.PNG",
+      caption: "Paint Diabolical Jouvert Shirt"
+    }
+  ];
 
+  let cozyIndex = 0;
+
+  const cozyImage = document.getElementById("cozyCarouselImage");
+  const cozyCaption = document.getElementById("cozyCarouselCaption");
+  const cozyDots = document.getElementById("cozyDots");
+
+  function renderCozyDots() {
+    cozyDots.innerHTML = "";
+    cozySlides.forEach((slide, index) => {
+      const dot = document.createElement("span");
+      dot.className = "cozy-dot" + (index === cozyIndex ? " active" : "");
+      dot.onclick = () => {
+        cozyIndex = index;
+        updateCozySlide();
+      };
+      cozyDots.appendChild(dot);
+    });
+  }
+
+  function updateCozySlide() {
+    cozyImage.src = cozySlides[cozyIndex].src;
+    cozyImage.alt = cozySlides[cozyIndex].caption;
+    cozyCaption.textContent = cozySlides[cozyIndex].caption;
+    renderCozyDots();
+  }
+
+  function changeCozySlide(direction) {
+    cozyIndex += direction;
+
+    if (cozyIndex < 0) {
+      cozyIndex = cozySlides.length - 1;
+    }
+
+    if (cozyIndex >= cozySlides.length) {
+      cozyIndex = 0;
+    }
+
+    updateCozySlide();
+  }
+
+  updateCozySlide();
+</script>
 </body>
 </html>
