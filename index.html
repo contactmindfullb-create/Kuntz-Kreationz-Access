@@ -370,6 +370,34 @@
 
   font-weight: 700;
 }
+    .submit-request-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 18px;
+  padding: 14px 24px;
+
+  background: var(--deep-purple);
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              background 0.2s ease;
+}
+
+.submit-request-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+  text-decoration: none;
+}
 
 #kuntzBookingForm label {
   margin-top: 10px;
