@@ -354,11 +354,21 @@
   background: var(--cream);
 }
 
-#kuntzBookingForm {
-  max-width: 650px;
-  margin: 30px auto 0;
-  display: grid;
-  gap: 10px;
+.submit-request-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 18px;
+  padding: 14px 24px;
+
+  border: none;
+  border-radius: 10px;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  font-weight: 700;
 }
 
 #kuntzBookingForm label {
@@ -629,65 +639,14 @@
       location, pricing, and appointment details.
     </p>
 
-    <form id="kuntzBookingForm">
+   
 
-      <label for="customerName">Name</label>
-      <input
-        type="text"
-        id="customerName"
-        name="name"
-        required
-      >
-
-      <label for="customerPhone">Phone Number</label>
-      <input
-        type="tel"
-        id="customerPhone"
-        name="phone"
-        required
-      >
-
-      <label for="serviceType">What are you interested in?</label>
-      <select id="serviceType" name="service" required>
-        <option value="">Choose one</option>
-        <option value="Retwist Service">Retwist Service</option>
-        <option value="Nail Service">Nail Service</option>
-        <option value="Cozy Kreationz">Cozy Kreationz</option>
-        <option value="General Question">General Question</option>
-      </select>
-
-      <label for="preferredDate">Preferred Date</label>
-      <input
-        type="date"
-        id="preferredDate"
-        name="preferredDate"
-      >
-
-      <label for="preferredTime">Preferred Time</label>
-      <input
-        type="time"
-        id="preferredTime"
-        name="preferredTime"
-      >
-
-      <label for="customerLocation">City or ZIP Code</label>
-      <input
-        type="text"
-        id="customerLocation"
-        name="location"
-      >
-
-      <label for="customerMessage">Notes or Questions</label>
-      <textarea
-        id="customerMessage"
-        name="message"
-        rows="5"
-        placeholder="Tell us anything that may help with your request."
-      ></textarea>
-
-      <button type="submit" class="button button-primary">
-        Send Request
-      </button>
+      <a
+  href="https://celestinecodeamor.com/9121069-2"
+  class="submit-request-button"
+>
+  Submit Your Request
+</a>
 
     </form>
 
