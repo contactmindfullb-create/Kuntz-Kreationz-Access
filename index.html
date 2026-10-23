@@ -434,11 +434,29 @@
   text-align: center;
   opacity: 0.75;
 }
+
+
+.coupon-nav{position:absolute;top:18px;right:5%;z-index:2}
+.coupon-nav a{display:inline-block;background:#d5aa52;color:#23152f;text-decoration:none;font-weight:800;padding:11px 19px;border-radius:999px;box-shadow:0 6px 20px #0004}
+.coupon-redeem{background:linear-gradient(135deg,#251331,#50276c 65%,#23132e);padding:74px 20px;color:#fff;text-align:center;scroll-margin-top:12px}
+.coupon-redeem .section-label{color:#f4d18f}.coupon-redeem h2{font-size:clamp(2rem,5vw,3.2rem);margin:8px 0 12px;color:#fff}
+.coupon-redeem .intro{max-width:650px;margin:0 auto 25px;color:#f4eaf8}
+.coupon-panel{background:#fffaf3;color:#2c1837;max-width:540px;margin:0 auto;padding:28px;border:2px solid #d5aa52;border-radius:22px;box-shadow:0 12px 34px #0004}
+.coupon-panel label{font-weight:750;display:block;text-align:left;margin-bottom:8px}
+.coupon-panel input{width:100%;font:inherit;padding:14px 16px;border:1px solid #ac94bf;border-radius:10px;background:#fff;color:#22152e}
+.coupon-panel button{background:#3f235e;color:#fff;font:inherit;font-weight:750;border:0;border-radius:999px;cursor:pointer;padding:13px 22px;margin-top:13px;width:100%}
+.coupon-message{margin:16px 0 0;line-height:1.5}.coupon-terms{font-size:.85rem;color:#eee0f2;margin:21px auto 0;max-width:640px}
+.coupon-nav a:focus-visible,.coupon-redeem button:focus-visible,.coupon-redeem input:focus-visible{outline:3px solid #d5aa52;outline-offset:3px}
+@media(max-width:600px){.coupon-nav{top:12px;right:12px}.coupon-nav a{font-size:.86rem;padding:9px 12px}.hero{padding-top:96px}}
+
+    
   </style>
 </head>
 
 <body>
 
+  <nav class="coupon-nav" aria-label="Coupon navigation"><a href="#coupon-redemption">Redeem Coupon</a></nav>
+ 
   <!-- HERO -->
   <section class="hero">
 
@@ -686,6 +704,23 @@
   </div>
 </section>
 
+  <section class="coupon-redeem" id="coupon-redemption" aria-labelledby="coupon-heading">
+  <div class="container">
+    <div class="section-label">Exclusive Majestic Ghostly Reward</div>
+    <h2 id="coupon-heading">Unlock Your Beauty Reward</h2>
+    <p class="intro">Received a Kuntz Kreationz reward in your CCdA Family Mystery Package? Your code may qualify you for a mobile Mani-Pedi experience for just <strong>$100</strong>.</p>
+    <div class="coupon-panel">
+      <label for="coupon-code">Enter your unique reward code</label>
+      <form id="couponAccessForm">
+        <input id="coupon-code" type="text" autocomplete="off" spellcheck="false" maxlength="32" placeholder="KK-MP-XXXXXXXX" required aria-describedby="coupon-message">
+        <button type="submit">Continue to Redemption</button>
+      </form>
+      <p id="coupon-message" class="coupon-message" role="status" aria-live="polite">Each reward code must be verified by Kuntz Kreationz before the discounted service is confirmed.</p>
+    </div>
+    <p class="coupon-terms">Offer expires January 31, 2027. One redemption per issued code. Appointment required. Mobile service area, availability, and any additional travel fees must be confirmed before booking. Codes are not validated automatically on this page yet.</p>
+  </div>
+</section>
+
   <!-- FINAL CTA -->
   <section class="final-cta">
 
@@ -887,5 +922,17 @@
   });
 </script>
 
+<script>
+document.getElementById('couponAccessForm').addEventListener('submit',function(event){
+  event.preventDefault();
+  const code=document.getElementById('coupon-code').value.trim().toUpperCase();
+  const status=document.getElementById('coupon-message');
+  status.textContent=/^KK-MP-[A-Z0-9]{6,16}$/.test(code)
+    ? 'Your code has been entered but is not verified yet. Contact Kuntz Kreationz through Request a Service, and provide your code for verification before booking.'
+    : 'Please enter the code exactly as provided with your Family Mystery Package.';
+  document.getElementById('coupon-code').value='';
+});
+</script>
+  
 </body>
 </html>
