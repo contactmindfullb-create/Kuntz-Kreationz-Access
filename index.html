@@ -436,8 +436,40 @@
 }
 
 
-.coupon-nav{position:absolute;top:18px;right:5%;z-index:2}
-.coupon-nav a{display:inline-block;background:#d5aa52;color:#23152f;text-decoration:none;font-weight:800;padding:11px 19px;border-radius:999px;box-shadow:0 6px 20px #0004}
+.coupon-nav {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Exclusive Coupon Navigation Button */
+.coupon-nav a {
+  display: inline-block;
+  background: #382344;
+  color: #f8d991;
+  border: 2px solid #d5aa52;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+/* Gold glow on hover */
+.coupon-nav a:hover {
+  background: #d5aa52;
+  color: #23152f;
+  box-shadow: 0 0 15px rgba(213, 170, 82, 0.55);
+  transform: translateY(-2px);
+}
+
+/* Keyboard accessibility */
+.coupon-nav a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
 .coupon-redeem{background:linear-gradient(135deg,#251331,#50276c 65%,#23132e);padding:74px 20px;color:#fff;text-align:center;scroll-margin-top:12px}
 .coupon-redeem .section-label{color:#f4d18f}.coupon-redeem h2{font-size:clamp(2rem,5vw,3.2rem);margin:8px 0 12px;color:#fff}
 .coupon-redeem .intro{max-width:650px;margin:0 auto 25px;color:#f4eaf8}
@@ -447,7 +479,7 @@
 .coupon-panel button{background:#3f235e;color:#fff;font:inherit;font-weight:750;border:0;border-radius:999px;cursor:pointer;padding:13px 22px;margin-top:13px;width:100%}
 .coupon-message{margin:16px 0 0;line-height:1.5}.coupon-terms{font-size:.85rem;color:#eee0f2;margin:21px auto 0;max-width:640px}
 .coupon-nav a:focus-visible,.coupon-redeem button:focus-visible,.coupon-redeem input:focus-visible{outline:3px solid #d5aa52;outline-offset:3px}
-@media(max-width:600px){.coupon-nav{top:12px;right:12px}.coupon-nav a{font-size:.86rem;padding:9px 12px}.hero{padding-top:96px}}
+@media(max-width:600px).coupon-nav a{font-size:.86rem;padding:9px 12px}.hero{padding-top:96px}}
 
     
   </style>
